@@ -11,6 +11,11 @@ A collection of finite element analysis (FEA) examples using **[CalculiX](http:/
   width="200"
   title="Linear elastic analysis of a cantilever beam">
 ](structural/linear_static/02_cantilever_beam/)
+[<img
+  src="structural/linear_static/03_plate_with_hole_quarter_model/results/plot_mises.png"
+  width="200"
+  title="Linear elastic analysis of a plate with a hole (quarter model)">
+](structural/linear_static/03_plate_with_hole_quarter_model/)
 
 This repository demonstrates how to set up, run, and evaluate FEA simulations using practical engineering examples. It aims to provide a structured and accessible reference for learning finite element analysis, understanding simulation workflows, and exploring the capabilities of CalculiX.
 
@@ -20,6 +25,7 @@ calculix-fea-examples/
 ├── structural/                  # Structural analyses
 │   ├── linear_static/             # Linear static analyses
 ├── INSTALLATION_LINUX.md
+├── INSTALLATION_WINDOWS.md
 ├── LICENSE.md
 ├── README.md
 └── run_all.py
@@ -28,7 +34,7 @@ calculix-fea-examples/
 The repository is organized by physical domain and analysis type. Each example is intended to be self-contained, with its own model files, documentation, and relevant results.
 
 ## Prerequisites
-* CalculiX GraphiX (cgx) and CrunchiX (ccx) 2.23, see [INSTALLATION](INSTALLATION_LINUX.md) for Ubuntu/Debian.
+* CalculiX GraphiX (cgx) and CrunchiX (ccx) 2.23, see [INSTALLATION_LINUX](INSTALLATION_LINUX.md) for Ubuntu/Debian or [INSTALLATION_WINDOWS](INSTALLATION_WINDOWS.md) for Windows 11 x64.
 
 ## Getting Started
 1. Clone this repository:
