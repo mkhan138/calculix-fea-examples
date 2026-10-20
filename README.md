@@ -73,4 +73,4 @@ The examples are intended for educational and exploratory purposes. Results depe
 Suggestions, corrections, and additional examples are welcome. Contributions should include a clear description of the problem, the model assumptions, and instructions for reproducing the results.
 
 ## License
-See the repository [LICENSE](LICENSE.md) for terms of use and redistribution.
+See the repository [LICENSE](LICENSE) for terms of use and redistribution.
