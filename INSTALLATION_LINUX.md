@@ -144,33 +144,25 @@ make -f Makefile_MT
 
 ```bash
 # Copy both executables to the system-wide executable directory.
-sudo cp ccx_2.23 /usr/local/bin
-sudo cp ccx_2.23_MT /usr/local/bin
+sudo cp ccx_2.23 /usr/local/bin/ccx_static
+sudo cp ccx_2.23_MT /usr/local/bin/ccx
 ```
+
+> **Note:**  ccx_2.23 is renamed as ccx_static and ccx_2.23_MT is renamed as ccx.
 
 ## 7. Run the beam test
 
 ```bash
 # Enter the test directory and run the standard solver.
 cd ~/CalculiX/CalculiX/ccx_2.23/test
-ccx_2.23 -i beamp
+ccx_static -i beamp
 
 # Set the OpenMP thread count and run the MT executable.
 export OMP_NUM_THREADS=4
-ccx_2.23_MT -i beamp
+ccx -i beamp
 ```
 
 > Both runs use the same job name and directory, so the second run may overwrite output from the first. Check the solver output for successful completion; launching a test alone does not establish that it passed.
-
-## Installation checklist
-
-- [ ] Build dependencies installed.
-- [ ] CalculiX source, documentation and tests extracted.
-- [ ] SPOOLES main and multithreaded components built.
-- [ ] ARPACK library built.
-- [ ] Standard and multithreaded CalculiX executables built.
-- [ ] Both executables copied to `/usr/local/bin`.
-- [ ] Both beam-test runs reviewed for successful completion.
 
 ## References
 
@@ -262,15 +254,6 @@ cgx -b model.fbd
 ```
 
 Move the mouse pointer inside the CGX drawing window before typing CGX commands. To access the menu, move outside the inner drawing rectangle and press the left mouse button.
-
-## Installation checklist
-
-- [ ] Official Linux executable downloaded and decompressed.
-- [ ] Executable installed as `/usr/local/bin/cgx`.
-- [ ] Read/execute permissions set.
-- [ ] `command -v cgx` resolves the intended installation.
-- [ ] `cgx -b dummy.fbd` opens a graphical window.
-- [ ] Optional HTML documentation installed if required.
 
 ## References
 

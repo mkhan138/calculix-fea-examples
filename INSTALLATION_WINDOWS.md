@@ -4,13 +4,13 @@
 The binaries included here downloaded from [CalculiX Homepage](https://www.dhondt.de/calculix_2.23_4win.zip). Many thanks to the original authors (Pascal Mossier
 and tetgen and glut).
 
-The binaries were provided by:
-rafal.brzegowy@yahoo.com
-Many thanks!
-ccx_i4 - Tacus, SPOOLES, PARDISO (from dll)
-PaStiXccx_dymamic - Tacus, SPOOLES, PARDISO (from dll)
-ccx_dymamic_i8 - SPOOLES, PARDISO (from dll)
-ccx_static - Tacus, SPOOLES, PaStiX 
+The binaries were provided by:\
+rafal.brzegowy@yahoo.com\
+Many thanks!\
+ccx_i4 - Tacus, SPOOLES, PARDISO (from dll)\
+PaStiXccx_dynamic - Tacus, SPOOLES, PARDISO (from dll)\
+ccx_dynamic_i8 - SPOOLES, PARDISO (from dll)\
+ccx_static - Tacus, SPOOLES, PaStiX \
 
 The dlls from Intel oneAPI MKL library are licensed under [Intel Simplified Software License](https://www.intel.com/content/www/us/en/developer/articles/license/end-user-license-agreement.html) and are hereby distributed with this package as mentioned [here](https://www.intel.com/content/www/us/en/developer/articles/tool/onemkl-license-faq.html).
 
@@ -31,4 +31,4 @@ This package uses the original files as mentioned above and place necessary dlls
 
 6. Rename the desired ccx_xyz.exe and cgx_xyz.exe variant in the unzipped folder to ccx.exe and cgx.exe (for example ccx_dynamic.exe to ccx.exe and cgx_GLUT.exe to cgx.exe)
 
-7. Now you run the executable globally in your system.
+7. Now you can run the executable globally in your system.
