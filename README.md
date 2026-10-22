@@ -22,8 +22,8 @@ This repository demonstrates how to set up, run, and evaluate FEA simulations us
 ## Repository Structure
 ```text
 calculix-fea-examples/
-├── structural/                  # Structural analyses
-│   ├── linear_static/             # Linear static analyses
+├── structural/          
+│   ├── linear_static/
 ├── INSTALLATION_LINUX.md
 ├── INSTALLATION_WINDOWS.md
 ├── LICENSE.md
