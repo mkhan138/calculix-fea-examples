@@ -179,7 +179,7 @@ Install the precompiled CalculiX GraphiX (cgx) executable in `/usr/local/bin` an
 - A system compatible with the official 64-bit Linux executable.
 - `sudo` access for installation in `/usr/local/bin`.
 
-The package-installation commands below are suggested for Ubuntu/Debian. Exact runtime dependencies depend on your distribution and the downloaded binary. These commands have not been executed on your machine.
+The package-installation commands below are suggested for Ubuntu/Debian. Exact runtime dependencies depend on your distribution and the downloaded binary.
 
 ## 1. Install download utilities
 

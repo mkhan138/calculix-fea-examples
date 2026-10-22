@@ -10,7 +10,7 @@ Many thanks!\
 ccx_i4 - Tacus, SPOOLES, PARDISO (from dll)\
 PaStiXccx_dynamic - Tacus, SPOOLES, PARDISO (from dll)\
 ccx_dynamic_i8 - SPOOLES, PARDISO (from dll)\
-ccx_static - Tacus, SPOOLES, PaStiX \
+ccx_static - Tacus, SPOOLES, PaStiX\
 
 The dlls from Intel oneAPI MKL library are licensed under [Intel Simplified Software License](https://www.intel.com/content/www/us/en/developer/articles/license/end-user-license-agreement.html) and are hereby distributed with this package as mentioned [here](https://www.intel.com/content/www/us/en/developer/articles/tool/onemkl-license-faq.html).
 
