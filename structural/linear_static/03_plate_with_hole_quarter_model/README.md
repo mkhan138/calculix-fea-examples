@@ -19,8 +19,8 @@ OS: Windows 11 and Ubuntu 26.04 on WSL2 (Windows 11)
 
 File                                                        | Contents    
 :-------------                                              | :-------------
-[plate_with_hole_quarter.fbd](plate_with_hole_quarter.fbd)  | Pre-processing script for CGX for generating cube and its mesh 
-[plate_with_hole_quarter.inp](plate_with_hole_quarter.inp)  | CCX input for force controlled simulation   
+[plate_with_hole_quarter.fbd](plate_with_hole_quarter.fbd)  | Pre-processing script for CGX for generating plate with hole and its mesh 
+[plate_with_hole_quarter.inp](plate_with_hole_quarter.inp)  | CCX input for the simulation   
 [post_d1.fbd](post_d1.fbd)                                  | Post-processing script for CGX (contour plot of displacement in x-direction)
 [post_mises.fbd](post_mises.fbd)                            | Post-processing script for CGX (contour plot of von Mises stress)
 [run_windows.bat](run_windows.bat)                          | Run all commands to solve and view the simulations' results on windows

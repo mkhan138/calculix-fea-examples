@@ -16,7 +16,7 @@ OS: Windows 11 and Ubuntu 26.04 on WSL2 (Windows 11)
 File                                             | Contents    
 :-------------                                   | :-------------
 [cube_linearstatic.fbd](cube.fbd)                | Pre-processing script for CGX for generating cube and its mesh    
-[cube_linearstatic.inp](cube_linearstatic.inp)   | CCX input for force controlled simulation
+[cube_linearstatic.inp](cube_linearstatic.inp)   | CCX input for the simulation
 [post_d2.fbd](post_d2.fbd)                       | Post-processing script for CGX (contour plot of displacement in y-direction)
 [post_mises.fbd](post_mises.fbd)                 | Post-processing script for CGX (contour plot of von Mises stress)
 [run_windows.bat](run_windows.bat)               | Run all commands to solve and view the simulations' results on windows

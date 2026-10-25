@@ -1,0 +1,31 @@
+*HEADING
+Four-fin heat sink: steady-state conduction and convection
+** Units: mm, N, s, tonne, degC; energy=N mm=mJ; power=mW.
+** k=237 mW/(mm K) = 237 W/(m K).
+** q=18 mW/mm2; h=0.023 mW/(mm2 K) = 23 W/(m2 K).
+*INCLUDE, INPUT=all.msh
+*INCLUDE, INPUT=solid.nam
+*INCLUDE, INPUT=nall.nam
+*INCLUDE, INPUT=bottom.sur
+*INCLUDE, INPUT=convection.sur
+** CGX prefixes exported names: Esolid, Nnall, Sbottom, Sconvection.
+*MATERIAL, NAME=ALUMINIUM
+*CONDUCTIVITY
+237.
+*SOLID SECTION, ELSET=Esolid, MATERIAL=ALUMINIUM
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+Nnall, 20.
+** Density and specific heat are unnecessary for this steady-state model.
+*STEP
+*HEAT TRANSFER, STEADY STATE
+1., 1.
+** Loads reference the exported element surfaces directly.
+*DFLUX
+Sbottom, S0, 18.
+*FILM
+Sconvection, F0, 20., 0.023
+*NODE FILE
+NT
+*EL FILE
+HFL
+*END STEP

@@ -1,0 +1,41 @@
+*HEADING
+Four-fin heat sink: transient conduction and convection
+** Units: mm, N, s, tonne, degC; energy=N mm=mJ; power=mW.
+** k=237 mW/(mm K) = 237 W/(m K).
+** q=18 mW/mm2; h=0.023 mW/(mm2 K) = 23 W/(m2 K).
+** Constant representative aluminium properties: rho=2700 kg/m3, cp=900 J/(kg K).
+** First run: cgx -b heatsink_surfaces.fbd
+*INCLUDE, INPUT=all.msh
+*INCLUDE, INPUT=solid.nam
+*INCLUDE, INPUT=nall.nam
+*INCLUDE, INPUT=bottom.sur
+*INCLUDE, INPUT=convection.sur
+** CGX prefixes exported names: Esolid, Nnall, Sbottom, Sconvection.
+*MATERIAL, NAME=ALUMINIUM
+*CONDUCTIVITY
+237.
+*DENSITY
+2.7e-9
+*SPECIFIC HEAT
+9.0e8
+*SOLID SECTION, ELSET=Esolid, MATERIAL=ALUMINIUM
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+Nnall, 20.
+** Heat-flux multiplier: ramp 0 to 1 over 100 s, then hold.
+*AMPLITUDE, NAME=HEAT_RAMP
+0., 0., 100., 1., 3000., 1.
+** Transient heating from 20 degC with a 100 s heat-flux ramp.
+** Time data: initial increment, duration, minimum increment, maximum increment (s).
+*STEP, INC=10000
+*HEAT TRANSFER
+0.1, 3000., 1.e-6, 10.
+** Loads reference the exported element surfaces directly.
+*DFLUX, AMPLITUDE=HEAT_RAMP
+Sbottom, S0, 18.
+*FILM
+Sconvection, F0, 20., 0.023
+*NODE FILE, FREQUENCY=1
+NT
+*EL FILE, FREQUENCY=1
+HFL
+*END STEP
