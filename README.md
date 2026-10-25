@@ -16,14 +16,23 @@ A collection of finite element analysis (FEA) examples using **[CalculiX](http:/
   width="200"
   title="Linear elastic analysis of a plate with a hole (quarter model)">
 ](structural/linear_static/03_plate_with_hole_quarter_model/)
+[<img
+  src="thermal/transient/01_heatsink/results/movie.gif"
+  width="200"
+  title="Heat transfer analysis of a heatsink">
+](thermal/transient/01_heatsink/)
 
 This repository demonstrates how to set up, run, and evaluate FEA simulations using practical engineering examples. It aims to provide a structured and accessible reference for learning finite element analysis, understanding simulation workflows, and exploring the capabilities of CalculiX.
 
 ## Repository Structure
 ```text
 calculix-fea-examples/
+├── scripts/   
 ├── structural/          
 │   ├── linear_static/
+├── thermal/                
+│   ├── steady_state/
+│   └── transient/
 ├── INSTALLATION_LINUX.md
 ├── INSTALLATION_WINDOWS.md
 ├── LICENSE.md
