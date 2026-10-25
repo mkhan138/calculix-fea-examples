@@ -1,5 +1,5 @@
 # Linear Static Examples
-This folder contains the following linear static fea examples:
+This folder contains the following linear static FEA examples:
 
 [<img
   src="01_cube/results/plot_d2.png"
