@@ -1,0 +1,19 @@
+# Read CalculiX results and model sets
+read heatsink_steadyState.frd
+read heatsink_steadyState.inp inp nom
+
+# Set the view
+rot y
+rot c 90
+rot u 35
+rot r 45
+rot c -25
+
+# Filled contour plot 
+view surf
+view fill
+plot fv all
+
+# Fit model to the view
+frame all
+zoom 0.8

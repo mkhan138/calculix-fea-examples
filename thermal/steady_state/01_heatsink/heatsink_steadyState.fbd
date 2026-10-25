@@ -1,0 +1,221 @@
+# Author: Muhammad Mohsin Khan
+# Created: 23.10.2026
+# ================================================================
+# CGX 2.23 batch # Heat sink: x=height, y=depth, z=width.
+# Units: mm, N, MPa
+
+# Four fins: z=0..8,14..22,28..36,42..50; x=10..50.
+# Structured conforming multi-block mesh. No external mesher required.
+# Nominal 2 mm mesh; even divisions used on every edge.
+# ================================================================
+
+# Define the corner points of the first heat sink fin section
+pnt P01 0 0 0
+pnt P02 0 0 8
+pnt P03 10 0 8
+pnt P04 10 0 0
+
+# Connect the points to define the boundary lines of the first section
+line L01 P01 P02 4
+line L02 P02 P03 6
+line L03 P03 P04 4
+line L04 P04 P01 6
+
+# Create the first surface using its four boundary lines
+surf S01 L01 L02 L03 L04
+
+# Define the corner points of the second heat sink fin section
+pnt P05 0 0 14
+pnt P06 10 0 14
+
+# Connect the second section to the first section
+line L05 P02 P05 4
+line L06 P05 P06 6
+line L07 P06 P03 4
+
+# Create the second surface, sharing the lower boundary with the first section
+surf S02 L05 L06 L07 L02
+
+# Define the corner points of the third heat sink fin section
+pnt P07 0 0 22
+pnt P08 10 0 22
+
+# Connect the third section to the second section
+line L08 P05 P07 4
+line L09 P07 P08 6
+line L10 P08 P06 4
+
+# Create the third surface, sharing the lower boundary with the second section
+surf S03 L08 L09 L10 L06
+
+# Define the corner points of the fourth heat sink fin section
+pnt P09 0 0 28
+pnt P10 10 0 28
+
+# Connect the fourth section to the third section
+line L11 P07 P09 4
+line L12 P09 P10 6
+line L13 P10 P08 4
+
+# Create the fourth surface, sharing the lower boundary with the third section
+surf S04 L11 L12 L13 L09
+
+# Define the corner points of the fifth heat sink fin section
+pnt P11 0 0 36
+pnt P12 10 0 36
+
+# Connect the fifth section to the fourth section
+line L14 P09 P11 4
+line L15 P11 P12 6
+line L16 P12 P10 4
+
+# Create the fifth surface, sharing the lower boundary with the fourth section
+surf S05 L14 L15 L16 L12
+
+# Define the corner points of the sixth heat sink fin section
+pnt P13 0 0 42
+pnt P14 10 0 42
+
+# Connect the sixth section to the fifth section
+line L17 P11 P13 4
+line L18 P13 P14 6
+line L19 P14 P12 4
+
+# Create the sixth surface, sharing the lower boundary with the fifth section
+surf S06 L17 L18 L19 L15
+
+# Define the corner points of the seventh heat sink fin section
+pnt P15 0 0 50
+pnt P16 10 0 50
+
+# Connect the seventh section to the sixth section
+line L20 P13 P15 4
+line L21 P15 P16 6
+line L22 P16 P14 4
+
+# Create the seventh surface, sharing the lower boundary with the sixth section
+surf S07 L20 L21 L22 L18
+
+# Define the outer extension points for the first horizontal heat sink block
+pnt P17 50 0 8
+pnt P18 50 0 0
+
+# Connect the extension points to the first section's outer edge
+line L23 P03 P17 20
+line L24 P17 P18 4
+line L25 P18 P04 20
+
+# Create the first outer extension surface
+surf S08 L03 L23 L24 L25
+
+# Define the outer extension points for the third heat sink section
+pnt P19 50 0 22
+pnt P20 50 0 14
+
+# Connect the extension points to the third section's outer edge
+line L26 P08 P19 20
+line L27 P19 P20 4
+line L28 P20 P06 20
+
+# Create the second outer extension surface
+surf S09 L10 L26 L27 L28
+
+# Define the outer extension points for the fifth heat sink section
+pnt P21 50 0 36
+pnt P22 50 0 28
+
+# Connect the extension points to the fifth section's outer edge
+line L29 P12 P21 20
+line L30 P21 P22 4
+line L31 P22 P10 20
+
+# Create the third outer extension surface
+surf S10 L16 L29 L30 L31
+
+# Define the outer extension points for the seventh heat sink section
+pnt P23 50 0 50
+pnt P24 50 0 42
+
+# Connect the extension points to the seventh section's outer edge
+line L32 P16 P23 20
+line L33 P23 P24 4
+line L34 P24 P14 20
+
+# Create the fourth outer extension surface
+surf S11 L22 L32 L33 L34
+
+# Sweep all profile blocks together so interfaces share topology.
+seta prof s all
+comp prof do
+swep prof back tra 0 40 0 20
+
+# Generate linear eight-node brick elements.
+elty all he8
+mesh all
+merg all n 1.e-8
+plot f all
+
+# Select ONLY nodes, then explicitly recover fully described free faces.
+# Do not use enq on a face-only set: enq is used here on nodes.
+seta nodes n all
+enq nodes bn rec 0 _ _ 1.e-6 a
+comp bn f
+seta bottom f bn
+
+# Build convection as the union of exterior coordinate-plane faces.
+# This preserves bottom-edge nodes needed by adjacent convection faces.
+# Internal block interfaces are not free faces and are not exported.
+enq nodes nY0 rec _ 0 _ 1.e-6 a
+comp nY0 f
+seta convection f nY0
+enq nodes nY40 rec _ 40 _ 1.e-6 a
+comp nY40 f
+seta convection f nY40
+enq nodes nX10 rec 10 _ _ 1.e-6 a
+comp nX10 f
+seta convection f nX10
+enq nodes nX50 rec 50 _ _ 1.e-6 a
+comp nX50 f
+seta convection f nX50
+enq nodes nZ0 rec _ _ 0 1.e-6 a
+comp nZ0 f
+seta convection f nZ0
+enq nodes nZ8 rec _ _ 8 1.e-6 a
+comp nZ8 f
+seta convection f nZ8
+enq nodes nZ14 rec _ _ 14 1.e-6 a
+comp nZ14 f
+seta convection f nZ14
+enq nodes nZ22 rec _ _ 22 1.e-6 a
+comp nZ22 f
+seta convection f nZ22
+enq nodes nZ28 rec _ _ 28 1.e-6 a
+comp nZ28 f
+seta convection f nZ28
+enq nodes nZ36 rec _ _ 36 1.e-6 a
+comp nZ36 f
+seta convection f nZ36
+enq nodes nZ42 rec _ _ 42 1.e-6 a
+comp nZ42 f
+seta convection f nZ42
+enq nodes nZ50 rec _ _ 50 1.e-6 a
+comp nZ50 f
+seta convection f nZ50
+
+# Explicit node/element sets for the solver.
+seta solid e all
+seta nall n all
+
+# Export mesh, sets, named surfaces and matching face-based loads.
+send all abq
+send solid abq nam
+send nall abq nam
+send bottom abq sur
+send convection abq sur
+
+# Diagnostics: bottom and convection must contain nonzero face counts.
+prnt se bottom
+prnt se convection
+plot f convection g
+plus f bottom r
+frame

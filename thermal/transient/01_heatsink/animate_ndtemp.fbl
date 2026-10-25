@@ -1,0 +1,7 @@
+# Run after opening the FRD and arranging the desired model view.
+# IMPORTANT: replace dataset number 1 below if the first NDTEMP
+# dataset has a different number in the Datasets menu.
+# No geometry or solver input changes are made by this script.
+anim real
+movi frames auto
+ds 1 eh 1
