@@ -7,7 +7,7 @@ The geometry and surfaces for loadings are shown in the figure below.
 
 <img src="inputs/bc.png" width="600" title="Geometry and surfaces">
 
-The heatsink has four fins which are 8mm width, 40 mm height and 40 mm width, and the base of the heatsink is 10 mm. A power of 36,000 mW is applied to the bottom surface (18 mW/mm<sup>2</sup>) show in red. A convection film coefficient of 0.023 mW/mm<sup>2</sup>K is applied on the green surfaces (other than the bottom). The simulation is performed for 3000 seconds (50 minutes).
+The heatsink has four fins which are 8mm width, 40 mm height and 40 mm width, and the base of the heatsink is 10 mm. A power of 36,000 mW is applied to the bottom surface (18 mW/mm<sup>2</sup>) shown in red. A convection film coefficient of 0.023 mW/mm<sup>2</sup>K is applied on the green surfaces (other than the bottom). The simulation is performed for 3000 seconds (50 minutes).
 
 ## Platform
 Software: Tested with cgx 2.23/ccx 2.23\
@@ -19,7 +19,8 @@ File                                                   | Contents
 :-------------                                         | :-------------
 [heatsink_transient.fbd](heatsink_transient.fbd)       | Pre-processing script for CGX for generating heatsink and its mesh     
 [heatsink_transient.inp](heatsink_transient.inp)       | CCX input for the simulation
-[post_temp.fbd](post_temp.fbd)                         | Post-processing script for CGX (creation of gif of nodal temperaure)
+[post_temp.fbd](post_temp.fbd)                         | Post-processing script for CGX (gif of nodal temperaure)
+[animate_ndtemp.fbl](animate_ndtemp.fbl)               | Post-processing script for CGX (commands for gif creation)
 [run_windows.bat](run_windows.bat)                     | Run all commands to solve and view the simulations' results on windows
 [run_linux.sh](run_linux.sh)                           | Run all commands to solve and view the simulations' results on linux
 [run.py](run.py)                                       | Run all commands to solve and view the simulations' results on any platform
@@ -29,7 +30,7 @@ Elements of first order hexahedral (brick) elements (C3D8) are used for the anal
 
 Loading:
 * Surface flux of 18 mW/mm<sup>2</sup> is applied to the bottom surface
-* Film condition with a coefficient of 0.023 mW/mm<sup>2</sup>K on the surfaces iother than the bottom surface
+* Film condition with a coefficient of 0.023 mW/mm<sup>2</sup>K on the surfaces other than the bottom surface
 
 Time:
 * Performed for 3000 seconds.

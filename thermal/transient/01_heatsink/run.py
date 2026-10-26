@@ -2,7 +2,7 @@
 """
 This script automates mesh generation, runs the cantilever linear-static
 simulation using CalculiX, and launches CGX post-processing for
-displacement, von Mises stress, and Szz stress.
+nodal temperature.
 
 Author: Muhammad Mohsin Khan
 Date: October 25, 2026
@@ -165,26 +165,16 @@ def run_postprocessing():
 def run_temperature_plot():
     print("\n[4/4] Running maximum nodal temperature plotting...")
 
-    plot_script = os.path.abspath(
-        os.path.join(
-            WORKDIR,
-            "..", "..", "..",
-            "scripts",
-            "plot_max_nd_temp.py"
-        )
-    )
+    plot_script = "plot-max-ndtemp"
 
     frd_path = os.path.join(WORKDIR, f"{JOB_NAME}.frd")
-
-    if not os.path.isfile(plot_script):
-        sys.exit(f"[ERROR] Plotting script not found: {plot_script}")
 
     if not os.path.isfile(frd_path):
         sys.exit(f"[ERROR] FRD file not found: {frd_path}")
 
     try:
         result = subprocess.run(
-            [sys.executable, plot_script, frd_path],
+            [plot_script, frd_path],
             cwd=WORKDIR,
             check=False,
         )
