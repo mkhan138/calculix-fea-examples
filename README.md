@@ -27,51 +27,71 @@ This repository demonstrates how to set up, run, and evaluate FEA simulations us
 ## Repository Structure
 ```text
 calculix-fea-examples/
-├── scripts/   
+├── src/  
+│   ├── postprocessing_scripts/
+│   └── run_all.py/ 
 ├── structural/          
-│   ├── linear_static/
+│   └── transient/
 ├── thermal/                
 │   ├── steady_state/
 │   └── transient/
-├── INSTALLATION_LINUX.md
-├── INSTALLATION_WINDOWS.md
-├── LICENSE.md
-├── README.md
-└── run_all.py
+├── INSTALLATION.md
+├── LICENSE
+├── pyproject.toml
+└── README.md
 ```
 
-The repository is organized by physical domain and analysis type. Each example is intended to be self-contained, with its own model files, documentation, and relevant results.
+The repository is organized by physical domain and analysis type. Each analysis type (e.g. stead_state) inside of a physical domain (e.g. thermal) contains examples. Each example is intended to be self-contained, with its own model files, documentation, and relevant results.
 
 ## Prerequisites
-* CalculiX GraphiX (cgx) and CrunchiX (ccx) 2.23, see [INSTALLATION_LINUX](INSTALLATION_LINUX.md) for Ubuntu/Debian or [INSTALLATION_WINDOWS](INSTALLATION_WINDOWS.md) for Windows 11 x64.
+* CalculiX GraphiX (cgx) and CrunchiX (ccx) 2.23, see [INSTALLATION](INSTALLATION.md) for Windows 11 x64 and Ubuntu/Debian .
 
 ## Getting Started
-1. Clone this repository:
+1. Clone and install this repository:
 ```bash
 git clone https://github.com/mkhan138/calculix-fea-examples
+cd calculix-fea-examples
+python -m venv .venv
 ```
 
-2. Navigate to an example directory:
+2. Activate the environment:
+Ubuntu/Debian:
 ```bash
-cd ./calculix-fea-examples/structural/linear_static/01_cube/
+source .venv/bin/activate
 ```
 
-3. Run the simulation using the CalculiX CrunchiX solver:
+Windows:
+```bash
+.\.venv\Scripts\Activate.ps1
+```
+
+then install from the root repository:
+```bash
+python -m pip install --upgrade pip
+python -m pip install -e .
+```
+
+3. Execute the following from root directory for running all examples on this repository:
+```bash
+run-all
+```
+
+4. For running a specific example in the repository, navigate to an example directory:
+```bash
+cd structural/linear_static/01_cube/
+```
+
+5. Run the simulation using the CalculiX CrunchiX solver:
 ```bash
 ccx -i cube_linearstatic.inp
 ```
 
-4. Inspect the results with CalculiX GraphiX.
+6. Inspect the results with CalculiX GraphiX.
 ```bash
 cgx -v cube_linearstatic.frd
 ```
 
 See the individual example directories for model-specific instructions.
-
-5. Execute the following from root directory for running all examples on this repository:
-```bash
-python run_all.py
-```
 
 ## Validation and Accuracy
 Where applicable, simulation results will be compared against analytical solutions, established benchmarks, or other reference data.

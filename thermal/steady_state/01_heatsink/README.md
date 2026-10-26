@@ -7,7 +7,7 @@ The geometry and surfaces for loadings are shown in the figure below.
 
 <img src="inputs/bc.png" width="600" title="Geometry and surfaces">
 
-The heatsink has four fins which are 8mm width, 40 mm height and 40 mm width, and the base of the heatsink is 10 mm. A power of 36,000 mW is applied to the bottom surface (18 mW/mm<sup>2</sup>) show in red. A convection film coefficient of 0.023 mW/mm<sup>2</sup>K is applied on the green surfaces (other than the bottom).
+The heatsink has four fins which are 8mm width, 40 mm height and 40 mm width, and the base of the heatsink is 10 mm. A power of 36,000 mW is applied to the bottom surface (18 mW/mm<sup>2</sup>) shown in red. A convection film coefficient of 0.023 mW/mm<sup>2</sup>K is applied on the green surfaces (other than the bottom).
 
 ## Platform
 Software: Tested with cgx 2.23/ccx 2.23\
@@ -29,7 +29,7 @@ Elements of first order hexahedral (brick) elements (C3D8) are used for the anal
 
 Loading:
 * Surface flux of 18 mW/mm<sup>2</sup> is applied to the bottom surface
-* Film condition with a coefficient of 0.023 mW/mm<sup>2</sup>K on the surfaces iother than the bottom surface
+* Film condition with a coefficient of 0.023 mW/mm<sup>2</sup>K on the surfaces other than the bottom surface
 
 ### Generating mesh and node sets
 

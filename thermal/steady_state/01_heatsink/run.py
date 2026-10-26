@@ -2,7 +2,7 @@
 """
 This script automates mesh generation, runs the cantilever linear-static
 simulation using CalculiX, and launches CGX post-processing for
-displacement, von Mises stress, and Szz stress.
+nodal temperature.
 
 Author: Muhammad Mohsin Khan
 Date: October 25, 2026
