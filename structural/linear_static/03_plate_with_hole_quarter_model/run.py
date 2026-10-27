@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 This script automates the generation of mesh geometries and parses .frd output 
-files for displacement-controlled and force-controlled cube simulations.
+files for the plate with hole simulation (quarter model).
 
 Author: Muhammad Mohsin Khan
 Date: October 16, 2026
