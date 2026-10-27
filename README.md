@@ -29,9 +29,10 @@ This repository demonstrates how to set up, run, and evaluate FEA simulations us
 calculix-fea-examples/
 ├── src/  
 │   ├── postprocessing_scripts/
-│   └── run_all.py/ 
+│   ├── run_all.py
+│   └── run_example.py
 ├── structural/          
-│   └── transient/
+│   └── linear_static/
 ├── thermal/                
 │   ├── steady_state/
 │   └── transient/
@@ -41,7 +42,7 @@ calculix-fea-examples/
 └── README.md
 ```
 
-The repository is organized by physical domain and analysis type. Each analysis type (e.g. stead_state) inside of a physical domain (e.g. thermal) contains examples. Each example is intended to be self-contained, with its own model files, documentation, and relevant results.
+The repository is organized by physical domain and analysis type. Each analysis type (e.g. steady_state) inside of a physical domain (e.g. thermal) contains examples. Each example is intended to be self-contained, with its own model files, documentation, and relevant results.
 
 ## Prerequisites
 * CalculiX GraphiX (cgx) and CrunchiX (ccx) 2.23, see [INSTALLATION](INSTALLATION.md) for Windows 11 x64 and Ubuntu/Debian .
@@ -55,12 +56,13 @@ python -m venv .venv
 ```
 
 2. Activate the environment:
-Ubuntu/Debian:
+
+For Ubuntu/Debian:
 ```bash
 source .venv/bin/activate
 ```
 
-Windows:
+For Windows 11:
 ```bash
 .\.venv\Scripts\Activate.ps1
 ```
@@ -68,7 +70,7 @@ Windows:
 then install from the root repository:
 ```bash
 python -m pip install --upgrade pip
-python -m pip install -e .
+python -m pip install .
 ```
 
 3. Execute the following from root directory for running all examples on this repository:
@@ -81,14 +83,9 @@ run-all
 cd structural/linear_static/01_cube/
 ```
 
-5. Run the simulation using the CalculiX CrunchiX solver:
+5. Execute the following from example directory:
 ```bash
-ccx -i cube_linearstatic.inp
-```
-
-6. Inspect the results with CalculiX GraphiX.
-```bash
-cgx -v cube_linearstatic.frd
+run-example
 ```
 
 See the individual example directories for model-specific instructions.

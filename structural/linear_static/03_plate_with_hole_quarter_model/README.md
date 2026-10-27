@@ -77,7 +77,7 @@ On windows, double click on "run_windows.bat", or open cmd, navigate to the dire
 > run_windows.bat
 ```
 
-Using python3 on any platform:
+Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
 ```
-> python run.py
+> run-example
 ```

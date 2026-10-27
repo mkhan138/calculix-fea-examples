@@ -57,8 +57,14 @@ This creates a gif of the nodal temperature.
 
 This transient analysis shows the temperature distribution over time in the heatsink. It can be seen that the base is the hottest, whereas the tip of the outer fins are the coolest at the end of the simulation.
 
+If you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
 ```
-> python ..\..\..\scripts\plot_max_nd_temp.py heatsink_transient.frd
+> plot-max-ndtemp heatsink_transient.frd
+```
+
+else:
+```
+> python ..\..\..\src\postprocessing_scripts\plot_max_nodal_temp.py heatsink_transient.frd
 ```
 
 This creates a csv and png of the maximum nodal temperature over time.
@@ -77,7 +83,7 @@ On windows, double click on "run_windows.bat", or open cmd, navigate to the dire
 > run_windows.bat
 ```
 
-Using python3 on any platform:
+Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
 ```
-> python run.py
+> run-example
 ```
