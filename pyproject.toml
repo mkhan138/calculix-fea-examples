@@ -15,11 +15,12 @@ dependencies = [
 
 [project.scripts]
 run-all = "run_all:main"
+run-example = "run_example:main"
 plot-max-ndtemp = "postprocessing_scripts.plot_max_nodal_temp:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-py-modules = ["run_all"]
+py-modules = ["run_all", "run_example"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
