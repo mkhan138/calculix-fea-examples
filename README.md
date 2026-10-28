@@ -32,7 +32,8 @@ calculix-fea-examples/
 │   ├── run_all.py
 │   └── run_example.py
 ├── structural/          
-│   └── linear_static/
+│   ├── linear_static/
+│   └── nonlinear_static/
 ├── thermal/                
 │   ├── steady_state/
 │   └── transient/
