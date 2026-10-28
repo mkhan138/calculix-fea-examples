@@ -1,0 +1,54 @@
+# Author: Muhammad Mohsin Khan
+# Created: 28.10.2026
+# ==========================================================
+# CalculiX GraphiX (cgx) FBD script
+# Unit system: mm, s, N, tonne
+#
+# Rectangular tensile bar: 100 x 10 x 10 mm
+# Cross-section in the YZ plane, swept along X
+#
+# Fixed end: x = 0 mm. Free/load end: x = 100 mm.
+# Reference end displacement for the CCX input deck: 0.5 mm
+#
+# Mesh: linear hexahedral (HE8/C3D8),
+#
+# Run from a writable working directory:
+#   cgx -b plastic_bar.fbd
+#
+# The script exports the mesh and named node sets. Depending on the CGX
+# version, the Abaqus-format mesh/set files are written using the set names.
+# ==========================================================
+
+pnt p1 0 0 0
+pnt p2 0 10 0
+pnt p3 0 10 10
+pnt p4 0 0 10
+
+line l1 p1 p2 4
+line l2 p2 p3 4
+line l3 p3 p4 4
+line l4 p4 p1 4
+
+gsur s1 + BLEND + l1 + l2 + l3 + l4
+
+# Original and translated end faces
+seta left s s1
+swep left right tra 100 0 0 40
+
+# Linear hexahedral elements
+elty all he8
+mesh all
+
+# Export mesh
+send all abq
+
+# Complete the end-face sets down to their mesh entities
+comp left do
+comp right do
+
+# Export node sets
+send left abq nam
+send right abq nam
+
+# Display mesh
+plot e all

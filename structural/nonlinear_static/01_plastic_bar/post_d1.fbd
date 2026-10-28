@@ -1,0 +1,21 @@
+# Read CalculiX results and model sets
+read plastic_bar.frd
+read plastic_bar.inp inp nom
+
+# Isometric view with Y-axis vertical
+rot z
+rot y
+rot r 35
+rot u 20
+
+# Plot von displacement in x direction
+cmap turbo
+ds 307 e 1
+
+# Filled contour plot 
+view elem
+plot fv
+
+# Fit model to the view
+frame
+zoom 1.2
