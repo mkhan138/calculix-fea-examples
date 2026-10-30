@@ -37,26 +37,26 @@ Loading:
 
 ### Generating mesh and node sets
 
-```
-> cgx -b cube_linearstatic.fbd
+```bash
+cgx -b cube_linearstatic.fbd
 ```
 
 ## Solving
-```
-> ccx -i cube_linearstatic
+```bash
+ccx -i cube_linearstatic
 ```
 
 ## Postprocessing
-```
-> cgx -b post_d2.fbd
+```bash
+cgx -b post_d2.fbd
 ```
 
 This creates a contour plot of the displacement in axial direction.
 
 <img src="results/plot_d2.png" width="300" title="Displacement in axial direction">
 
-```
-> cgx -b post_mises.fbd
+```bash
+cgx -b post_mises.fbd
 ```
 
 This creates a contour plot of the von Mises stress.
@@ -65,17 +65,17 @@ This creates a contour plot of the von Mises stress.
 
 ## Run complete project
 To run the complete project on linux, run:
-```
-> chmod +x run_linux.sh
-> ./run_linux.sh
+```bash
+chmod +x run_linux.sh
+./run_linux.sh
 ```
 
 On windows, double click on "run_windows.bat", or open cmd, navigate to the directory and run:
-```
-> run_windows.bat
+```bash
+run_windows.bat
 ```
 
 Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> run-example
+```bash
+run-example
 ```

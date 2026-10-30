@@ -3,7 +3,7 @@
 ## Purpose
 Demonstration of nonlinear static analysis of an elastic-plastic tensile bar fully fixed at one end.
 
-A tensile bar displaced at its free end is analyzed. The bar is 100 x 10 x 10 mm<sup>3</sup>, which is displaced 0.5 mm at its right end and is completely fixed in all directions on the left end. See [analytical solution](reference/analytical_solution_plastic_bar.ipynb) for the analytical solution.
+A tensile bar displaced at its free end is analyzed. The bar is 100 x 10 x 10 mm<sup>3</sup>, which is displaced 0.5 mm at its right end and is completely fixed in all directions on the left end. See [analytical solution](reference/analytical_solution_plastic_bar.ipynb).
 
 <img src="inputs/bc.png" width="600" title="Boundary conditions">
 
@@ -37,18 +37,18 @@ Loading:
 
 ### Generating mesh and node sets
 
-```
-> cgx -b plastic_bar.fbd
+```bash
+cgx -b plastic_bar.fbd
 ```
 
 ## Solving
-```
-> ccx -i plastic_bar
+```bash
+ccx -i plastic_bar
 ```
 
 ## Postprocessing
-```
-> cgx -b post_d1.fbd
+```bash
+cgx -b post_d1.fbd
 ```
 
 This creates a contour plot of the displacement in x direction. 
@@ -57,8 +57,8 @@ This creates a contour plot of the displacement in x direction.
 
 This figure shows the displacement as applied in x direction.
 
-```
-> cgx -b post_Sxx.fbd
+```bash
+cgx -b post_Sxx.fbd
 ```
 
 This creates a contour plot of the axial stress.
@@ -67,16 +67,16 @@ This creates a contour plot of the axial stress.
 
 The axial stress near the free end of the beam is almost the same as mentioned in [analytical solution](reference/analytical_solution_plastic_bar.ipynb).
 
-```
-> cgx -b post_pe.fbd
+```bash
+cgx -b post_pe.fbd
 ```
 
 This creates a contour plot of the equivalent plastic strain which is nearly the same as mentioned in [analytical solution](reference/analytical_solution_plastic_bar.ipynb)..
 
 <img src="results/plot_pe.png" width="300" title="Equivalent plastic strain">
 
-```
-> python plot_force_displacement.py
+```bash
+python plot_force_displacement.py
 ```
 
 This creates the force versus displacement plot.
@@ -87,17 +87,17 @@ The initial elastic response is linear. Yield starts at 0.11905 mm and F = 25000
 
 ## Run complete project
 To run the complete project on linux, run:
-```
-> chmod +x run_linux.sh
-> ./run_linux.sh
+```bash
+chmod +x run_linux.sh
+./run_linux.sh
 ```
 
 On windows, double click on "run_windows.bat", or open cmd, navigate to the directory and run:
-```
-> run_windows.bat
+```bash
+run_windows.bat
 ```
 
 Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> run-example
+```bash
+run-example
 ```

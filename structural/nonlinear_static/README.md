@@ -4,8 +4,7 @@ This folder contains the following nonlinear static FEA examples:
 <table>
   <tr>
     <td width="200" align="center">
-      <strong>Elastic-plastic displacement<br>
-      of a tensile bar</strong>
+      <strong>Elastic-plastic displacement</strong>
       <br><br>
       <a href="01_plastic_bar/">
         <img

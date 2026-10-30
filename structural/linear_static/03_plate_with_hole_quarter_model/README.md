@@ -39,26 +39,26 @@ Loading:
 
 ### Generating mesh and node sets
 
-```
-> cgx -b plate_with_hole_quarter.fbd
+```bash
+cgx -b plate_with_hole_quarter.fbd
 ```
 
 ## Solving
-```
-> ccx -i plate_with_hole_quarter
+```bash
+ccx -i plate_with_hole_quarter
 ```
 
 ## Postprocessing
-```
-> cgx -b post_d1.fbd
+```bash
+cgx -b post_d1.fbd
 ```
 
 This creates a contour plot of the displacement in x direction. The displacement in x direction is nearly similar to the analytical values (see [analytical solution](reference/analytical_solution_quarter_plate_hole.ipynb)
 
 <img src="results/plot_d1.png" width="300" title="Displacement in x direction">
 
-```
-> cgx -b post_mises.fbd
+```bash
+cgx -b post_mises.fbd
 ```
 
 This creates a contour plot of the von Mises stress. The stresses are little higher than [analytical solution](reference/analytical_solution_quarter_plate_hole.ipynb). This could be due to mesh, but also because the results show nodal averaging and not the stress at integration points.
@@ -67,17 +67,17 @@ This creates a contour plot of the von Mises stress. The stresses are little hig
 
 ## Run complete project
 To run the complete project on linux, run:
-```
-> chmod +x run_linux.sh
-> ./run_linux.sh
+```bash
+chmod +x run_linux.sh
+./run_linux.sh
 ```
 
 On windows, double click on "run_windows.bat", or open cmd, navigate to the directory and run:
-```
-> run_windows.bat
+```bash
+run_windows.bat
 ```
 
 Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> run-example
+```bash
+run-example
 ```
