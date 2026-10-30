@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "calculix-fea-examples"
-version = "v1.1.1"
+version = "v1.1.0"
 description = "Demonstration of CalculiX for various basic finite element analysis simulations"
 requires-python = ">=3.10"
 dependencies = [
