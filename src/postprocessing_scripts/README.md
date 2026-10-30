@@ -4,7 +4,7 @@
 Diverse postprocessing scripts to evaluate the results of a simulation.
 
 ## Platform
-Software: Tested with Python 3.14.7
+Software: Tested with Python 3.14.7\
 OS: Windows 11 and Ubuntu 26.04 on WSL2 (Windows 11)
 
 ## Contents
