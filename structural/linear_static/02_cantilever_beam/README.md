@@ -41,18 +41,18 @@ Loading:
 
 ### Generating mesh and node sets
 
-```
-> cgx -b cantilever_linearstatic.fbd
+```bash
+cgx -b cantilever_linearstatic.fbd
 ```
 
 ## Solving
-```
-> ccx -i cantilever_linearstatic
+```bash
+ccx -i cantilever_linearstatic
 ```
 
 ## Postprocessing
-```
-> cgx -b post_d2.fbd
+```bash
+cgx -b post_d2.fbd
 ```
 
 This creates a contour plot of the displacement in y direction with a deformation factor of 10. 
@@ -61,8 +61,8 @@ This creates a contour plot of the displacement in y direction with a deformatio
 
 This figure shows the deformation of the beam, under the load. As expected, the beam bends due to the lateral force at its right end. The result here exactly matches with the analytical solution, as mentioned in [analytical solution](reference/analytical_solution_cantilever_beam.ipynb).
 
-```
-> cgx -b post_mises.fbd
+```bash
+cgx -b post_mises.fbd
 ```
 
 This creates a contour plot of the von Mises stress.
@@ -70,8 +70,8 @@ This creates a contour plot of the von Mises stress.
 <img src="results/plot_mises_linearStatic.png" width="300" title="Von Mises Stress">
 
 
-```
-> cgx -b post_Szz.fbd
+```bash
+cgx -b post_Szz.fbd
 ```
 
 This creates a contour plot of the stress in axial direction.
@@ -82,17 +82,17 @@ This figure shows the normal stress in axial direction, which is distributed alm
 
 ## Run complete project
 To run the complete project on linux, run:
-```
-> chmod +x run_linux.sh
-> ./run_linux.sh
+```bash
+chmod +x run_linux.sh
+./run_linux.sh
 ```
 
 On windows, double click on "run_windows.bat", or open cmd, navigate to the directory and run:
-```
-> run_windows.bat
+```bash
+run_windows.bat
 ```
 
 Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> run-example
+```bash
+run-example
 ```

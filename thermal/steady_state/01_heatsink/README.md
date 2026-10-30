@@ -33,18 +33,18 @@ Loading:
 
 ### Generating mesh and node sets
 
-```
-> cgx -b heatsink_steadyState.fbd
+```bash
+cgx -b heatsink_steadyState.fbd
 ```
 
 ## Solving
-```
-> ccx -i heatsink_steadyState
+```bash
+ccx -i heatsink_steadyState
 ```
 
 ## Postprocessing
-```
-> cgx -b post_temp.fbd
+```bash
+cgx -b post_temp.fbd
 ```
 
 This creates a contour plot of the nodal temperature.
@@ -55,17 +55,17 @@ This steady state analysis shows the temperature distribution in the heatsink at
 
 ## Run complete project
 To run the complete project on linux, run:
-```
-> chmod +x run_linux.sh
-> ./run_linux.sh
+```bash
+chmod +x run_linux.sh
+./run_linux.sh
 ```
 
 On windows, double click on "run_windows.bat", or open cmd, navigate to the directory and run:
-```
-> run_windows.bat
+```bash
+run_windows.bat
 ```
 
 Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> run-example
+```bash
+run-example
 ```

@@ -37,18 +37,18 @@ Time:
 
 ### Generating mesh and node sets
 
-```
-> cgx -b heatsink_transient.fbd
+```bash
+cgx -b heatsink_transient.fbd
 ```
 
 ## Solving
-```
-> ccx -i heatsink_transient
+```bash
+ccx -i heatsink_transient
 ```
 
 ## Postprocessing
-```
-> cgx -b post_temp.fbd
+```bash
+cgx -b post_temp.fbd
 ```
 
 This creates a gif of the nodal temperature.
@@ -58,13 +58,13 @@ This creates a gif of the nodal temperature.
 This transient analysis shows the temperature distribution over time in the heatsink. It can be seen that the base is the hottest, whereas the tip of the outer fins are the coolest at the end of the simulation.
 
 If you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> plot-max-ndtemp heatsink_transient.frd
+```bash
+plot-max-ndtemp heatsink_transient.frd
 ```
 
 else:
-```
-> python ..\..\..\src\postprocessing_scripts\plot_max_nodal_temp.py heatsink_transient.frd
+```bash
+python ..\..\..\src\postprocessing_scripts\plot_max_nodal_temp.py heatsink_transient.frd
 ```
 
 This creates a csv and png of the maximum nodal temperature over time.
@@ -73,17 +73,17 @@ This creates a csv and png of the maximum nodal temperature over time.
 
 ## Run complete project
 To run the complete project on linux, run:
-```
-> chmod +x run_linux.sh
-> ./run_linux.sh
+```bash
+chmod +x run_linux.sh
+./run_linux.sh
 ```
 
 On windows, double click on "run_windows.bat", or open cmd, navigate to the directory and run:
-```
-> run_windows.bat
+```bash
+run_windows.bat
 ```
 
 Or if you have already installed this repository as mentioned in [README](https://github.com/mkhan138/calculix-fea-examples#getting-started), run:
-```
-> run-example
+```bash
+run-example
 ```
