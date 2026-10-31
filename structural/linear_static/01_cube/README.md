@@ -17,6 +17,7 @@ File                                             | Contents
 :-------------                                   | :-------------
 [cube_linearstatic.fbd](cube.fbd)                | Pre-processing script for CGX for generating cube and its mesh    
 [cube_linearstatic.inp](cube_linearstatic.inp)   | CCX input for the simulation
+[cube_linearstatic.step](cube_linearstatic.step) | STEP file of the model for a pre- and postprocessor such as PrePoMax
 [post_d2.fbd](post_d2.fbd)                       | Post-processing script for CGX (contour plot of displacement in y-direction)
 [post_mises.fbd](post_mises.fbd)                 | Post-processing script for CGX (contour plot of von Mises stress)
 [run_windows.bat](run_windows.bat)               | Run all commands to solve and view the simulations' results on windows

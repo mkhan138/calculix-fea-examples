@@ -19,6 +19,7 @@ File                                                   | Contents
 :-------------                                         | :-------------
 [heatsink_steadyState.fbd](heatsink_steadyState.fbd)   | Pre-processing script for CGX for generating heatsink and its mesh     
 [heatsink_steadyState.inp](heatsink_steadyState.inp)   | CCX input for the simulation
+[heatsink_steadyState.step](heatsink_steadyState.step) | STEP file of the model for a pre- and postprocessor such as PrePoMax
 [post_temp.fbd](post_temp.fbd)                         | Post-processing script for CGX (contour plot of temperature)
 [run_windows.bat](run_windows.bat)                     | Run all commands to solve and view the simulations' results on windows
 [run_linux.sh](run_linux.sh)                           | Run all commands to solve and view the simulations' results on linux
