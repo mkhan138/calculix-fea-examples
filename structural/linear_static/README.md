@@ -13,11 +13,6 @@ This folder contains the following linear static FEA examples:
           alt="Linear elastic displacement of a single element cube">
       </a>
     </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td width="200" align="center">
       <strong>Cantilever beam</strong>
       <br><br>
@@ -28,11 +23,6 @@ This folder contains the following linear static FEA examples:
           alt="Linear elastic analysis of a cantilever beam">
       </a>
     </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td width="200" align="center">
       <strong>Plate with a hole</strong>
       <br><br>

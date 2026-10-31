@@ -23,6 +23,7 @@ File                                                         | Contents
 :-------------                                               | :-------------
 [cantilever_linearstatic.fbd](cantilever_linearstatic.fbd)   | Pre-processing script for CGX for generating cantilever beam and its mesh     
 [cantilever_linearstatic.inp](cantilever_linearstatic.inp)   | CCX input for the simulation
+[cantilever_linearstatic.step](cantilever_linearstatic.step) | STEP file of the model for a pre- and postprocessor such as PrePoMax
 [post_d2.fbd](post_d2.fbd)                                   | Post-processing script for CGX (contour plot of displacement in y direction)
 [post_mises.fbd](post_mises.fbd)                             | Post-processing script for CGX (contour plot of von Mises stress)
 [post_Szz.fbd](post_Szz.fbd)                                 | Post-processing script for CGX (contour plot of stress in z direction)

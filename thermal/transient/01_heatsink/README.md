@@ -19,6 +19,7 @@ File                                                   | Contents
 :-------------                                         | :-------------
 [heatsink_transient.fbd](heatsink_transient.fbd)       | Pre-processing script for CGX for generating heatsink and its mesh     
 [heatsink_transient.inp](heatsink_transient.inp)       | CCX input for the simulation
+[heatsink_transient.step](heatsink_transient.step)     | STEP file of the model for a pre- and postprocessor such as PrePoMax
 [post_temp.fbd](post_temp.fbd)                         | Post-processing script for CGX (gif of nodal temperaure)
 [animate_ndtemp.fbl](animate_ndtemp.fbl)               | Post-processing script for CGX (commands for gif creation)
 [run_windows.bat](run_windows.bat)                     | Run all commands to solve and view the simulations' results on windows

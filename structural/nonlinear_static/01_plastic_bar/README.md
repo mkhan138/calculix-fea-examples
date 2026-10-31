@@ -19,6 +19,7 @@ File                                       | Contents
 :-------------                             | :-------------
 [plastic_bar.fbd](plastic_bar.fbd)         | Pre-processing script for CGX for generating tensile bar and its mesh     
 [plastic_bar.inp](plastic_bar.inp)         | CCX input for the simulation
+[plastic_bar.step](plastic_bar.step)       | STEP file of the model for a pre- and postprocessor such as PrePoMax
 [post_d1.fbd](post_d1.fbd)                 | Post-processing script for CGX (contour plot of displacement in x direction)
 [post_Sxx.fbd](post_Sxx.fbd)               | Post-processing script for CGX (contour plot of Sxx)
 [post_pe.fbd](post_pe.fbd)                 | Post-processing script for CGX (contour plot of equivalent plastic strain)
