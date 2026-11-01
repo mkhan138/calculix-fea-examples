@@ -1,0 +1,12 @@
+# Read CalculiX results and model sets
+read longeron_rod.frd
+read longeron_rod.inp inp nom
+
+# Plot axial stress
+ds 2 e 1
+
+# Show elements
+plot nv all
+
+# Fit model to the view
+frame
