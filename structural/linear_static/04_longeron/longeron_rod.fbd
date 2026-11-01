@@ -1,0 +1,44 @@
+# Author: Muhammad Mohsin Khan
+# Created: 01.11.2026
+# ==========================================================
+# CalculiX GraphiX (cgx) FBD script
+# Longeron (Three rod in series)
+# Unit system: mm, s, N, tonne
+#
+# Fixed end: x = 0 mm. Free/load end: x = 787.4 mm.
+# Reference end force for the CCX input deck: 44482.22 N.
+#
+# Mesh: Two-node 3D truss element (T3D2).
+#
+# Run from a writable working directory:
+#   cgx -b longeron_rod.fbd
+#
+# The script exports the mesh and named node sets. Depending on the CGX
+# version, the Abaqus-format mesh/set files are written using the set names.
+# ==========================================================
+
+# 1. CREATE GEOMETRY POINTS
+pnt P0 0.0   0.0 0.0
+pnt P1 254.0 0.0 0.0
+pnt P2 431.8 0.0 0.0
+pnt P3 787.4 0.0 0.0
+
+# 2. CREATE THREE LINES
+# Last parameter = number of divisions
+line L1 P0 P1 1
+line L2 P1 P2 1
+line L3 P2 P3 1
+
+# 3. ASSIGN ELEMENT TYPE
+# BE2 is the CGX two-node line mesh type
+elty all be2
+
+# 4. GENERATE MESH
+mesh all
+
+# 5. DISPLAY MESH
+plot e all
+frame
+
+# 6. EXPORT MESH TO ABAQUS FORMAT
+send all abq

@@ -33,5 +33,15 @@ This folder contains the following linear static FEA examples:
           alt="Linear elastic analysis of a plate with a hole (quarter model)">
       </a>
     </td>
+    <td width="200" align="center">
+      <strong>Longeron</strong>
+      <br><br>
+      <a href="04_longeron/">
+        <img
+          src="04_longeron/inputs/longeron.png"
+          width="200"
+          alt="Longeron (two-node truss element model)">
+      </a>
+    </td>
   </tr>
 </table>
